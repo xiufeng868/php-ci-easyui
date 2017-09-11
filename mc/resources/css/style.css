@@ -1,0 +1,317 @@
+﻿html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+button,
+textarea,
+select,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    font: 12px/1.33 'Microsoft YaHei', 'SimSun', Tahoma, Helvetica, Arial;
+}
+table {
+    border-spacing: 0;
+}
+.tablespacing {
+    border-spacing: 3px;
+}
+.clear {
+    clear: both;
+}
+fieldset,
+img {
+    border: 0 none;
+}
+li {
+    list-style: none outside none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+cite,
+em {
+    font-style: normal;
+}
+input[type='button'],
+input[type='reset'],
+input[type='submit'],
+input[type='radio'],
+input[type='checkbox'] {
+    cursor: pointer;
+}
+input[type='text'],
+input[type='password'] {
+    height: 16px;
+    padding: 12px;
+}
+.clearfix:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: '.';
+}
+label[disabled='true'],
+label[disabled=''],
+label[disabled='disabled'] {
+    color: #000;
+}
+a:link,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+textarea {
+    padding: 2px;
+}
+.fromEditTable {
+    width: 100%;
+}
+.fromEditTable td {
+    height: 30px;
+    padding-left: 5px;
+    border-bottom: dashed 1px #ccc;
+}
+.setTextWidth300 input[type='text'] input[type='password'] {
+    width: 300px;
+}
+.setTextWidth300 textarea {
+    width: 300px;
+    margin: 5px 0 5px 0;
+}
+.setTextWidth200 input[type='text'] input[type='password'] {
+    width: 200px;
+}
+.setTextWidth200 textarea {
+    width: 200px;
+    margin: 5px 0 5px 0;
+}
+.setTextWidth150 input[type='text'] input[type='password'] {
+    width: 150px;
+}
+.setTextWidth150 textarea {
+    width: 150px;
+    margin: 5px 0 5px 0;
+}
+.setTextWidth100 input[type='text'] input[type='password'] {
+    width: 100px;
+}
+.setTextWidth100 textarea {
+    width: 100px;
+    margin: 5px 0 5px 0;
+}
+.setTextWidth80 input[type='text'] input[type='password'] {
+    width: 80px;
+}
+.setTextWidth80 textarea {
+    width: 80px;
+    margin: 5px 0 5px 0;
+}
+.ui-skin-nav {
+    float: left;
+    padding: 0;
+    list-style: none outside none;
+}
+.ui-skin-nav .li-skinitem {
+    font-size: 12px;
+    float: left;
+    margin: 2px 0 0 5px;
+    text-align: center;
+}
+.ui-skin-nav .li-skinitem span {
+    display: inline-block;
+    width: 12px;
+    height: 10px;
+    cursor: pointer;
+    border: 1px solid #000;
+}
+.ui-skin-nav .li-skinitem span.gray {
+    background-color: gray;
+}
+.ui-skin-nav .li-skinitem span.default {
+    background-color: blue;
+}
+.ui-skin-nav .li-skinitem span.metro {
+    background-color: orange;
+}
+.ui-skin-nav .li-skinitem span.black {
+    background-color: black;
+}
+.ui-skin-nav .li-skinitem span.bootstrap {
+    background-color: silver;
+}
+.mvctool {
+    height: 28px;
+}
+.search {
+    float: right;
+    margin: 1px 0px;
+}
+.icon {
+    padding-left: 18px;
+}
+.icon-error {
+    background: url(../img/icons/error.png) no-repeat 0 0;
+}
+.icon-success {
+    background: url(../img/icons/success.png) no-repeat 0 0;
+}
+.icon-warn {
+    background: url(../img/icons/warn.png) no-repeat 0 0;
+}
+.icon-save {
+    background: url(../img/icons/save.png) no-repeat 0 0;
+}
+.icon-return {
+    background: url(../img/icons/return.png) no-repeat 0 0;
+}
+.icon-delete {
+    background: url(../img/icons/delete.png) no-repeat 0 0;
+}
+.icon-add {
+    background: url(../img/icons/add.png) no-repeat 0 0;
+}
+.icon-edit {
+    background: url(../img/icons/edit.png) no-repeat 0 0;
+}
+.icon-details {
+    background: url(../img/icons/details.png) no-repeat 0 0;
+}
+.icon-share {
+    background: url(../img/icons/share.png) no-repeat 0 0;
+}
+.icon-admin {
+    background: url(../img/icons/admin.png) no-repeat 0 0;
+}
+.icon-disable {
+    background: url(../img/icons/disable.png) no-repeat 0 0;
+}
+.icon-enable {
+    background: url(../img/icons/enable.png) no-repeat 0 0;
+}
+.icon-select {
+    background: url(../img/icons/select.gif) no-repeat 0 0;
+}
+.icon-unselect {
+    background: url(../img/icons/unselect.gif) no-repeat 0 0;
+}
+.icon-yes {
+    background: url(../img/icons/yes.png) no-repeat 0 0;
+}
+.icon-no {
+    background: url(../img/icons/no.png) no-repeat 0 0;
+}
+.icon-ok {
+    background: url(../img/icons/ok.png) no-repeat 0 0;
+}
+.icon-admin {
+    background: url(../img/icons/admin.png) no-repeat 0 0;
+}
+.icon-pwd {
+    background: url(../img/icons/pwd.png) no-repeat 0 0;
+}
+.icon-full {
+    background: url(../img/icons/full.png) no-repeat 0 0;
+}
+.icon-permission {
+    background: url(../img/icons/permission.png) no-repeat 0 0;
+}
+.icon-user {
+    background: url(../img/icons/user.png) no-repeat 0 0;
+}
+.icon-role {
+    background: url(../img/icons/role.png) no-repeat 0 0;
+}
+.icon-right {
+    background: url(../img/icons/right.png) no-repeat 0 0;
+}
+.icon-module {
+    background: url(../img/icons/module.png) no-repeat 0 0;
+}
+.icon-system {
+    background: url(../img/icons/system.png) no-repeat 0 0;
+}
+.icon-dictionary {
+    background: url(../img/icons/dictionary.png) no-repeat 0 0;
+}
+.icon-picture {
+    background: url(../img/icons/picture.png) no-repeat 0 0;
+}
+.icon-pictures {
+    background: url(../img/icons/pictures.png) no-repeat 0 0;
+}
+.icon-lc {
+    background: url(../img/icons/lc.png) no-repeat 0 0;
+}
+.icon-cart {
+    background: url(../img/icons/cart.png) no-repeat 0 0;
+}
+.icon-credit {
+    background: url(../img/icons/credit.png) no-repeat 0 0;
+}
+.icon-money {
+    background: url(../img/icons/money.png) no-repeat 0 0;
+}
+.icon-chart {
+    background: url(../img/icons/chart.png) no-repeat 0 0;
+}
+.icon-crawl {
+    background: url(../img/icons/crawl.png) no-repeat 0 0;
+}
+.icon-movie {
+    background: url(../img/icons/movie.png) no-repeat 0 0;
+}
+.icon-cast {
+    background: url(../img/icons/cast.png) no-repeat 0 0;
+}
+.window .messager-body {
+    max-height: 300px;
+    padding-bottom: 12px;
+}
+.window .messager-body p {
+    padding-top: 2px;
+}
+.textbox textarea.textbox-text {
+    white-space: pre-wrap;
+}

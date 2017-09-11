@@ -1,0 +1,225 @@
+/* bootstrap */
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    font-family: sans-serif;
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    margin: 0;
+    color: #888;
+    background-color: #060606;
+}
+h1,
+.h1 {
+    font-size: 36px;
+}
+h1,
+h2,
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #fff;
+}
+h1 {
+    font-size: 2em;
+    margin: .67em 0;
+}
+a {
+    text-decoration: none;
+    color: #2a9fd6;
+}
+a {
+    background: transparent;
+}
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button,
+input {
+    line-height: normal;
+}
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+.btn-primary {
+    color: #fff;
+    border-color: #2a9fd6;
+    background-color: #2a9fd6;
+}
+.btn {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 8px 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    background-image: none;
+    -o-user-select: none;
+}
+.form-control {
+    font-size: 14px;
+    line-height: 1.428571429;
+    display: block;
+    width: 100%;
+    height: 38px;
+    padding: 8px 12px;
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    vertical-align: middle;
+    color: #000;
+    border: 1px solid #282828;
+    background-color: #fff;
+    background-image: none;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+.form-control::-moz-placeholder {
+    opacity: 1;
+    color: #888;
+}
+.alert-danger {
+    color: #fff;
+    border-color: #bd001f;
+    background-color: #c00;
+}
+.alert-dismissable {
+    padding-right: 35px;
+}
+.alert {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid transparent;
+}
+
+/* login */
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.75;
+    background-image: url('../img/bg.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+}
+.form-signin {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    width: 275px;
+    height: 300px;
+    margin: auto;
+    padding: 15px;
+    /*resize: both;*/
+}
+.form-signin .form-signin-heading {
+    font-size: 45px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 3px 1px 6px #000;
+}
+.form-signin .form-control {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    color: #080808;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type='text'] {
+    margin-bottom: -1px;
+    border: 1px #999 solid;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signin input[type='password'] {
+    margin-bottom: 15px;
+    border: 1px #999 solid;
+    border-top-color: #999;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.form-signin .alert {
+    display: none;
+    margin-bottom: 15px;
+    opacity: .75;
+}
+.bing-desc {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    text-align: right;
+    color: #fff;
+}
+.bing-desc span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

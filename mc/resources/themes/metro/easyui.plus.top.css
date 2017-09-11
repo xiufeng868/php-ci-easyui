@@ -1,0 +1,28 @@
+.head-title td {
+    font-weight: bold;
+    padding: 5px 10px 5px 10px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+.head-title td span {
+    font-weight: normal;
+}
+.head-title td span a {
+    color: #444;
+}
+.head-menu td {
+    padding: 0 5px 1px 5px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+.define-bottom {
+    line-height: 18px;
+    height: 20px;
+    background-color: #fff;
+}
+.bgb {
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}

@@ -1,0 +1,58 @@
+.define-head {
+    overflow: hidden;
+    height: 55px;
+    background: url('/resources/img/head_bg2.jpg');
+}
+.define-head .define-logo {
+    float: left;
+    width: 50%;
+    height: 52px;
+    background: url('/resources/img/logo.png') 10px 5px no-repeat;
+}
+.define-head .define-logo #LoginTopLine {
+    font-size: 26px;
+    line-height: 30px;
+    height: 30px;
+    margin: 5px 0 0 10px;
+    padding-left: 55px;
+    letter-spacing: 2px;
+    color: #000;
+    text-shadow: 3px 1px 6px #fff;
+}
+.define-head .define-logo #LoginBotoomLine {
+    font-size: 12px;
+    line-height: 15px;
+    height: 15px;
+    margin-top: 2px;
+    padding-left: 65px;
+    letter-spacing: 1px;
+    color: #000;
+    text-shadow: 3px 1px 6px #fff;
+}
+.define-head .define-account {
+    line-height: 20px;
+    float: right;
+    width: 50%;
+    height: 50px;
+    padding-top: 10px;
+    text-align: right;
+    color: #eee;
+}
+.define-head .define-account a {
+    color: #eee;
+}
+.define-head .define-account a:hover {
+    color: orange;
+}
+.define-head .define-account span b {
+    color: orange;
+}
+.define-bottom {
+    line-height: 18px;
+    height: 20px;
+    background-color: #f1f1f1;
+}
+.bgb {
+    border-bottom: 1px solid #d4d4d4;
+    background-color: #efefef;
+}

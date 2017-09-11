@@ -1,0 +1,115 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #eee;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+body {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.messager-body {
+    padding: 10px;
+    color: #eee;
+}
+.messager-body p {
+    margin: 0;
+}
+.m-toolbar {
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #f5f5f5;
+}
+.m-left {
+    font-size: 16px;
+    line-height: 32px;
+    padding-left: 6px;
+}
+.m-right {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 32px;
+    padding-right: 8px;
+}
+.datagrid-header {
+    border: 0;
+}
+.pagination table {
+    float: right;
+}
+.pagination-info {
+    float: left;
+}
+.datagrid-cell {
+    padding: 7px;
+}
+.datagrid-cell .left {
+    float: left;
+    width: 25%;
+}
+.datagrid-cell .center {
+    float: left;
+    width: 55%;
+    text-align: center;
+}
+.datagrid-cell .right {
+    float: right;
+    width: 20%;
+    text-align: right;
+}
+.datagrid-cell .amount {
+    font-weight: bold;
+    color: red;
+}
+.datagrid-cell .name {
+    font-weight: bold;
+}
+.datagrid-cell .date {
+    font-weight: bold;
+    color: silver;
+}
+button.c1:active,
+button.c2:active,
+button.c5:active,
+button.c6:active,
+button.c7:active {
+    border-color: gray;
+    background: gray;
+}
+#footer2 {
+    border: 0;
+}
+#footer2 .textbox {
+    float: left;
+    border: 0;
+}
+#footer2 .textbox-text {
+    background: #ddd;
+}
+#footer2 .l-btn-text {
+    margin: 0;
+}
+#mask {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    background-color: black;
+}
