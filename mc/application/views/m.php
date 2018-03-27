@@ -13,7 +13,7 @@
     <meta name="x5-orientation" content="portrait">
     <meta name="x5-fullscreen" content="true">
     <meta name="x5-page-mode" content="app">
-    <!-- <script src="/resources/js/iscroll.js"></script> -->
+    <!-- <script src="/resources/js/iscroll-lite.js"></script> -->
     <!-- <script src="/resources/js/fastclick.min.js"></script> -->
     <!-- <script src="/resources/js/jquery.min.js"></script> -->
     <script src="//cdn.bootcss.com/iScroll/5.2.0/iscroll-lite.min.js"></script>
