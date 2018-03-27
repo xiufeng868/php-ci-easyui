@@ -1,4 +1,5 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
+
 /**
  * CodeIgniter
  *
@@ -188,7 +189,7 @@ class CI_DB_cubrid_forge extends CI_DB_forge {
 		{
 			$key_name = "pk_" . $table . "_" .
 				$this->db->_protect_identifiers(implode('_', $primary_keys));
-			
+
 			$primary_keys = $this->db->_protect_identifiers($primary_keys);
 			$sql .= ",\n\tCONSTRAINT " . $key_name . " PRIMARY KEY(" . implode(', ', $primary_keys) . ")";
 		}
@@ -207,7 +208,7 @@ class CI_DB_cubrid_forge extends CI_DB_forge {
 					$key_name = $this->db->_protect_identifiers($key);
 					$key = array($key_name);
 				}
-				
+
 				$sql .= ",\n\tKEY \"{$key_name}\" (" . implode(', ', $key) . ")";
 			}
 		}

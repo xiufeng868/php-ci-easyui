@@ -1,6 +1,4 @@
-<?php
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 class MY_Model extends CI_Model
 {
@@ -9,7 +7,7 @@ class MY_Model extends CI_Model
     {
         parent::__construct();
     }
-    
+
     protected function insertRight()
     {
         $sql = 'INSERT INTO `right`(ModuleID,RoleID,RightFlag)

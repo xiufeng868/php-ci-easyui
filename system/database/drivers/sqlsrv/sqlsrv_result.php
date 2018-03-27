@@ -1,4 +1,5 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
+
 /**
  * CodeIgniter
  *
@@ -68,7 +69,7 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 		{
 			$field_names[] = $field['Name'];
 		}
-		
+
 		return $field_names;
 	}
 
@@ -93,10 +94,10 @@ class CI_DB_sqlsrv_result extends CI_DB_result {
 			$F->max_length	= $field['Size'];
 			$F->primary_key = 0;
 			$F->default		= '';
-			
+
 			$retval[] = $F;
 		}
-		
+
 		return $retval;
 	}
 

@@ -1,6 +1,4 @@
-<?php
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 class RightModel extends MY_Model
 {
@@ -87,7 +85,7 @@ class RightModel extends MY_Model
 
     public function getRightOperateByRoleAndModule($roleId, $moduleId)
     {
-        $sql = 'SELECT mo.ID,mo.Name,mo.Code,mo.ModuleID,ro.RoleID, IF(ISNULL(ro.OperateID),0,1) AS Alloted 
+        $sql = 'SELECT mo.ID,mo.Name,mo.Code,mo.ModuleID,ro.RoleID, IF(ISNULL(ro.OperateID),0,1) AS Alloted
                 FROM (SELECT * FROM moduleoperate WHERE ModuleID=?) mo
                 LEFT JOIN (SELECT * FROM rightoperate WHERE RoleID=? AND ModuleID=?) ro ON mo.ID=ro.OperateID
                 ORDER BY mo.Sort';

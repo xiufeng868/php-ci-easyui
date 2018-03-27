@@ -1,6 +1,4 @@
-<?php
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 class Right extends MY_Controller
 {
@@ -9,19 +7,19 @@ class Right extends MY_Controller
         parent::__construct();
         $this->load->model('mc/RightModel');
     }
-    
+
     public function index()
     {
         $data['permission'] = $this->getPermission('mc' . __CLASS__);
         $this->loadModuleView('mc/right/index', $data);
     }
-    
+
     public function query($roleId, $moduleId)
     {
         $result = $this->RightModel->getRightOperateByRoleAndModule($roleId, $moduleId);
         echo json_encode($result);
     }
-    
+
     public function save()
     {
         $this->validatePost('mc_right_save');

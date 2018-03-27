@@ -1,4 +1,5 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
+
 /**
  * CodeIgniter
  *
@@ -73,7 +74,7 @@ if ( ! function_exists('singular'))
 			'/(n)ews$/'             => '\1\2ews',
 			'/([^u])s$/'            => '\1',
 		);
-		
+
 		foreach ($singular_rules as $rule => $replacement)
 		{
 			if (preg_match($rule, $result))
@@ -104,7 +105,7 @@ if ( ! function_exists('plural'))
 	function plural($str, $force = FALSE)
 	{
 		$result = strval($str);
-	
+
 		$plural_rules = array(
 			'/^(ox)$/'                 => '\1\2en',     // ox
 			'/([m|l])ouse$/'           => '\1ice',      // mouse, louse

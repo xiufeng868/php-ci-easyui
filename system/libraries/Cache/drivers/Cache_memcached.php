@@ -1,4 +1,5 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
+
 /**
  * CodeIgniter
  *
@@ -175,12 +176,12 @@ class CI_Cache_memcached extends CI_Driver {
 			{
 				$cache_server['port'] = $this->_default_options['default_port'];
 			}
-	
+
 			if ( ! array_key_exists('weight', $cache_server))
 			{
 				$cache_server['weight'] = $this->_default_options['default_weight'];
 			}
-	
+
 			$this->_memcached->addServer(
 					$cache_server['hostname'], $cache_server['port'], $cache_server['weight']
 			);

@@ -1,4 +1,4 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  * MP_Cache Class
@@ -21,16 +21,16 @@ class MP_Cache
 	var $expires;
 	var $created;
 	var $dependencies;
-    
+
 	/**
 	 * Constructor - Initializes and references CI
 	 */
     function MP_Cache()
     {
         $this->ci =& get_instance();
-        
+
         $this->reset();
-        
+
         $this->path = $this->ci->config->item('mp_cache_dir');
         $default_expires = $this->ci->config->item('mp_cache_default_expires');
         if ($default_expires !== false && $default_expires > 0)
@@ -39,7 +39,7 @@ class MP_Cache
         	$this->default_expires = null;
         if ($this->path == '') return false;
     }
-    
+
 	/**
 	 * Initialize MP_Cache object to empty
 	 *
@@ -54,19 +54,19 @@ class MP_Cache
     	$this->created = null;
     	$this->dependencies = array();
     }
-	
+
 	/**
 	 * Helper functions for the name property
 	 */
 	function set_name($name) { $this->reset(); $this->filename = $name; return $this; }
 	function get_name() { return $this->filename; }
-	
+
 	/**
 	 * Helper functions for the contents property
 	 */
 	function set_contents($contents) { $this->contents = $contents; return $this; }
 	function get_contents() { return $this->contents; }
-	
+
 	/**
 	 * Helper functions for the dependencies property
 	 */
@@ -76,7 +76,7 @@ class MP_Cache
 			$this->dependencies = $dependencies;
 		else
 			$this->dependencies = array($dependencies);
-		
+
 		// Return $this to support chaining
 		return $this;
 	}
@@ -86,24 +86,24 @@ class MP_Cache
 			$this->dependencies = array_merge($this->dependencies, $dependencies);
 		else
 			$this->dependencies[] = $dependencies;
-		
+
 		// Return $this to support chaining
 		return $this;
 	}
 	function get_dependencies() { return $this->dependencies; }
-	
+
 	/**
 	 * Helper functions for the expires property
 	 */
 	function set_expires($expires) { $this->expires = time() + $expires; return $this; }
 	function get_expires() { return $this->expires; }
-	
+
 	/**
 	 * Helper function to get the cache creation date
 	 */
 	function get_created($created) { return $this->created; }
-    
-    
+
+
 	/**
 	 * Retrieve Cache File
 	 *
@@ -120,31 +120,31 @@ class MP_Cache
         	$this->reset();
         	$this->filename = $filename;
         }
-        
+
         // Check directory permissions
         if ( ! is_dir($this->path) OR ! is_really_writable($this->path))
         {
             return FALSE;
         }
-        
+
         // Build the file path.
         $filepath = $this->path.$this->filename.'.cache';
-        
+
         // Check if the cache exists, if not return FALSE
         if ( ! @file_exists($filepath))
         {
             return FALSE;
         }
-        
+
         // Check if the cache can be opened, if not return FALSE
         if ( ! $fp = @fopen($filepath, FOPEN_READ))
         {
             return FALSE;
         }
-    	
+
         // Lock the cache
         flock($fp, LOCK_SH);
-        
+
         // If the file contains data return it, otherwise return NULL
         if (filesize($filepath) > 0)
         {
@@ -154,23 +154,23 @@ class MP_Cache
         {
             $this->contents = NULL;
         }
-        
+
         // Unlock the cache and close the file
         flock($fp, LOCK_UN);
         fclose($fp);
-        
+
         // Check cache expiration, delete and return FALSE when expired
         if ($use_expires && ! empty($this->contents['__mp_cache_expires']) && $this->contents['__mp_cache_expires'] < time())
         {
             $this->delete($filename);
             return false;
         }
-        
+
         // Check Cache dependencies
         foreach ($this->contents['__mp_cache_dependencies'] as $dep)
         {
         	$cache_created = filemtime($this->path.$this->filename.'.cache');
-        	
+
         	// If dependency doesn't exist or is newer than this cache, delete and return FALSE
         	if (! file_exists($this->path.$dep.'.cache') or filemtime($this->path.$dep.'.cache') > $cache_created)
         	{
@@ -178,20 +178,20 @@ class MP_Cache
 	            return false;
         	}
         }
-        
+
         // Instantiate the object variables
     	$this->expires      = (isset($this->contents['__mp_cache_expires']) ? $this->contents['__mp_cache_expires'] : null);
     	$this->dependencies = (isset($this->contents['__mp_cache_dependencies']) ? $this->contents['__mp_cache_dependencies'] : null);
     	$this->created      = (isset($this->contents['__mp_cache_created']) ? $this->contents['__mp_cache_created'] : null);
-        
+
         // Cleanup the MP_Cache variables from the contents
         $this->contents = $this->contents['__mp_cache_contents'];
-        
+
         // Return the cache
         log_message('debug', "MP_Cache retrieved: ".$filename);
         return $this->contents;
     }
-    
+
 	/**
 	 * Write Cache File
 	 *
@@ -214,25 +214,25 @@ class MP_Cache
         		$this->expires = time() + $expires;
 	        $this->dependencies = $dependencies;
         }
-        
+
         // Put the contents in an array so additional MP_Cache variables
         // can be easily removed from the output
         $this->contents = array('__mp_cache_contents' => $this->contents);
-        
+
         // Check directory permissions
         if ( ! is_dir($this->path) OR ! is_really_writable($this->path))
         {
             return;
         }
-        
-        
+
+
         // check if filename contains dirs
         $subdirs = explode('/', $this->filename);
         if (count($subdirs) > 1)
         {
             array_pop($subdirs);
             $test_path = $this->path.implode('/', $subdirs);
-            
+
             // check if specified subdir exists
             if ( ! @file_exists($test_path))
             {
@@ -240,21 +240,21 @@ class MP_Cache
                 if ( ! @mkdir($test_path)) return false;
             }
         }
-        
+
         // Set the path to the cachefile which is to be created
         $cache_path = $this->path.$this->filename.'.cache';
-		
+
         // Open the file and log if an error occures
         if ( ! $fp = @fopen($cache_path, FOPEN_WRITE_CREATE_DESTRUCTIVE))
         {
             log_message('error', "Unable to write MP_cache file: ".$cache_path);
             return;
         }
-        
+
         // MP_Cache variables
         $this->contents['__mp_cache_created'] = time();
         $this->contents['__mp_cache_dependencies'] = $this->dependencies;
-        
+
         // Add expires variable if its set...
         if (! empty($this->expires) && $this->expires > time())
         {
@@ -265,7 +265,7 @@ class MP_Cache
 		{
 			$this->contents['__mp_cache_expires'] = $this->default_expires;
 		}
-        
+
         // Lock the file before writing or log an error if it failes
         if (flock($fp, LOCK_EX))
         {
@@ -279,47 +279,47 @@ class MP_Cache
         }
         fclose($fp);
         @chmod($cache_path, DIR_WRITE_MODE);
-		
+
         // Log success
         log_message('debug', "MP_Cache file written: ".$cache_path);
-        
+
         // Reset values
         $this->reset();
     }
-    
+
 	/**
 	 * Delete Cache File
 	 *
 	 * @access	public
 	 * @param	string
 	 * @return	void
-	 */	
+	 */
     function delete($filename = null)
     {
     	if ($filename !== null) $this->filename = $filename;
-    	
+
         $file_path = $this->path.$this->filename.'.cache';
-        
+
         if (file_exists($file_path)) unlink($file_path);
-        
+
         // Reset values
         $this->reset();
     }
-    
+
 	/**
 	 * Delete Full Cache or Cache subdir
 	 *
 	 * @access	public
 	 * @param	string
 	 * @return	void
-	 */	
+	 */
     function delete_all($dirname = '')
     {
         if (empty($this->path)) return false;
 
         $this->ci->load->helper('file');
         if (file_exists($this->path.$dirname)) delete_files($this->path.$dirname, TRUE);
-        
+
         // Reset values
         $this->reset();
     }

@@ -1,4 +1,5 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
+
 /**
  * CodeIgniter
  *
@@ -95,14 +96,14 @@ class CI_DB_pdo_result extends CI_DB_result {
 	function field_data()
 	{
 		$data = array();
-	
+
 		try
 		{
 			for($i = 0; $i < $this->num_fields(); $i++)
 			{
 				$data[] = $this->result_id->getColumnMeta($i);
 			}
-			
+
 			return $data;
 		}
 		catch (Exception $e)
@@ -173,7 +174,7 @@ class CI_DB_pdo_result extends CI_DB_result {
 	 * @return	object
 	 */
 	function _fetch_object()
-	{	
+	{
 		return $this->result_id->fetchObject();
 	}
 

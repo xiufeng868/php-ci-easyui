@@ -305,6 +305,9 @@ textarea {
 .icon-cast {
     background: url(../img/icons/cast.png) no-repeat 0 0;
 }
+.icon-mv {
+    background: url(../img/icons/douban.png) no-repeat 0 0;
+}
 .window .messager-body {
     max-height: 300px;
     padding-bottom: 12px;

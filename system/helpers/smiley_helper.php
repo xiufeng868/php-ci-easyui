@@ -1,4 +1,5 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
+
 /**
  * CodeIgniter
  *
@@ -238,7 +239,7 @@ if ( ! function_exists('_get_smiley_array'))
 		{
 			include(APPPATH.'config/smileys.php');
 		}
-		
+
 		if (isset($smileys) AND is_array($smileys))
 		{
 			return $smileys;
